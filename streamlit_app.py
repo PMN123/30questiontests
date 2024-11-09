@@ -50,7 +50,7 @@ def extract_answers(input_pdf, num_answers=30):
     return answers[:num_answers]
 
 # Streamlit Interface
-st.title("Extract First 30 Questions and Answers from PDF")
+st.title("Creates the 30 question minicon tests")
 
 # File upload
 uploaded_file = st.file_uploader("Upload a PDF file", type="pdf")
