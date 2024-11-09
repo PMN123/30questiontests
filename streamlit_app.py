@@ -50,7 +50,7 @@ def extract_answers(input_pdf, num_answers=30):
     return answers[:num_answers]
 
 # Streamlit Interface
-st.title("Extract First 30 Questions and Answers from PDF")
+st.title("Creates the 30 question minicon tests, and gives you a table with answers")
 
 # File upload
 uploaded_file = st.file_uploader("Upload a PDF file", type="pdf")
@@ -73,7 +73,7 @@ if uploaded_file is not None:
     answers = extract_answers(uploaded_file)
     answers_df = pd.DataFrame(answers, columns=["Answer"])
     answers_df.index = range(1, len(answers_df) + 1)  # Set index to start from 1
-    answers_df.index.name = "Questions"  # Set index name to "Questions"
+    answers_df.index.name = "Question"  # Set index name to "Question"
     
     st.subheader("First 30 Answers")
     st.table(answers_df)
